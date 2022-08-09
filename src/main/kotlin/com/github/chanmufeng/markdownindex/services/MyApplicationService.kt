@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.chanmufeng.markdownindex.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.chanmufeng.markdownindex.MyBundle
 
 class MyApplicationService {
 
