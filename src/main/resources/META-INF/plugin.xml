@@ -6,13 +6,15 @@
 
     <depends>com.intellij.modules.platform</depends>
 
+
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.chanmufeng.markdownindex.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.chanmufeng.markdownindex.services.MyProjectService"/>
+        <applicationService serviceImplementation="com.github.chanmufeng.markdownindex.services.MarkdownIndexService"/>
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.chanmufeng.markdownindex.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+    <actions>
+        <action id="PopAction_ID" class="com.github.chanmufeng.markdownindex.actions.PopAction" text="markdown index"
+                description="add serial number to your MD titles">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+    </actions>
 </idea-plugin>
