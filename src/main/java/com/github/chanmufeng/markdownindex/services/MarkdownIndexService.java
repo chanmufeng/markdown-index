@@ -1,13 +1,17 @@
 package com.github.chanmufeng.markdownindex.services;
 
+import com.intellij.openapi.components.Service;
+
 /**
  * @author chanmufeng
  * @description markdown添加索引逻辑service
  * @date 2022/8/10
  */
-public class MarkdownIndexService {
+@Service
+public final class MarkdownIndexService {
 
     private final String NUMBER_MARK = "#";
+
 
 
     /**

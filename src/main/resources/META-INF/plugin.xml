@@ -7,14 +7,39 @@
     <depends>com.intellij.modules.platform</depends>
 
 
-    <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.chanmufeng.markdownindex.services.MarkdownIndexService"/>
-    </extensions>
+    <!--    <extensions defaultExtensionNs="com.intellij">-->
+    <!--        <applicationService serviceImplementation="com.github.chanmufeng.markdownindex.services.MarkdownIndexService"/>-->
+    <!--    </extensions>-->
 
     <actions>
-        <action id="PopAction_ID" class="com.github.chanmufeng.markdownindex.actions.PopAction" text="markdown index"
+        <action
+                id="PopAction_ID"
+                class="com.github.chanmufeng.markdownindex.actions.PopAction"
+                text="markdown index"
                 description="add serial number to your MD titles">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>
+
     </actions>
+
+    <description>
+        <![CDATA[
+  The markdown-index plugin is very simple to use.
+  <br/><br/>
+  ]]>
+    </description>
+
+    <change-notes><![CDATA[
+      <h3>V0.0.1</h3>
+      <ul>
+          <li>Initialize plugin</li>
+      </ul>
+      <h3>V1.0.0</h3>
+      <ul>
+          <li>Change description</li>
+          <li>Use light service instead</li>
+      </ul>
+    ]]>
+    </change-notes>
+
 </idea-plugin>

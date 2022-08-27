@@ -4,6 +4,7 @@ import com.github.chanmufeng.markdownindex.services.MarkdownIndexService;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.openapi.editor.Caret;
@@ -18,6 +19,7 @@ import org.apache.commons.lang.StringUtils;
  * 弹出框
  */
 public class PopAction extends AnAction {
+
 
     @Override
     public void actionPerformed(AnActionEvent e) {
@@ -38,9 +40,9 @@ public class PopAction extends AnAction {
         String[] lines = document.getText().split("\n");
 
         // 获取自己编写的MarkdownIndexService
-        MarkdownIndexService projectCountingService =
+        MarkdownIndexService markdownIndexService =
                 ApplicationManager.getApplication().getService(MarkdownIndexService.class);
-        lines = projectCountingService.addMarkdownIndex(lines);
+        lines = markdownIndexService.addMarkdownIndex(lines);
 
         Caret primaryCaret = editor.getCaretModel().getPrimaryCaret();
         primaryCaret.removeSelection();
